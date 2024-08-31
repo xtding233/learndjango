@@ -20,9 +20,8 @@ def detail(request, question_id):
     # except Question.DoesNotExist:
     #     raise Http404("Question does not exist")
     question = get_object_or_404(Question, pk=question_id)
-    choice = get_object_or_404(Choice, pk=question_id)
     return render(request, "polls/detail.html",
-                  {"question": question, "choice": choice})
+                  {"question": question})
 
 def results(request, question_id):
     response = "You're looking at the results of questions %s."
